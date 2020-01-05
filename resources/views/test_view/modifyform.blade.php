@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h1>Modify Form for test</h1>
+    <h1>Modify - test crud</h1>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -29,9 +29,11 @@
           </div>
           <div class="form-group">
               <label for="description">Description :</label>
-              <input type="text" class="form-control" name="description" value="{{ $test->description }}"/>
+              <textarea class="form-control" aria-label="With textarea" name="description">{{ $test->description }}</textarea>
+              
           </div>
           <button type="submit" class="btn btn-primary">Modify</button>
+          <a href="{{ route('test_crud.index')}}" class="btn btn-dark">LIST</a>
       </form>
   </div>
 </div>

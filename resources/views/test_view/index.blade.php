@@ -5,11 +5,22 @@
   .uper {
     margin-top: 40px;
   }
-</style>
-<div class="uper">
 
-<div class="card-header">
-    <h1>List test crud</h1>
+  .right-box {
+  float: right;
+}
+
+</style>
+<div class="card uper">
+
+  <div class="card-header">
+    <div class="row">
+
+    <div class="col"><h1>List - test crud</h1></div>
+    <div class="col">  <a href="{{ route('test_crud.create')}}" class="right-box btn btn-secondary">CREATE</a> </div>
+
+    </div>
+     
   </div>
 
   @if(session()->get('success'))
@@ -20,10 +31,10 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td></td>
+          <td>No</td>
           <td>Title</td>
-          <td>description</td>
-          <td colspan="3">기능</td>
+          <td>Description</td>
+          <td colspan="3">Function</td>
         </tr>
     </thead>
     <tbody>
@@ -32,13 +43,13 @@
             <td>{{$column->id}}</td>
             <td>{{$column->title}}</td>
             <td>{{$column->description}}</td>
-            <td><a href="{{ route('test_crud.show', $column->id)}}" class="btn btn-primary">확인</a></td>
-            <td><a href="{{ route('test_crud.edit', $column->id)}}" class="btn btn-success">수정</a></td>
+            <td><a href="{{ route('test_crud.show', $column->id)}}" class="btn btn-primary">VIEW</a></td>
+            <td><a href="{{ route('test_crud.edit', $column->id)}}" class="btn btn-success">MODIFY</a></td>
             <td>
                 <form action="{{ route('test_crud.destroy', $column->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">삭제</button>
+                  <button class="btn btn-danger" type="submit">DELETE</button>
                 </form>
             </td>
         </tr>

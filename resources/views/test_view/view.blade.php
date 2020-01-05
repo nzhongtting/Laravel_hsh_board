@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    View - Test C.R.U.D 
+    <h1>View - test crud</h1> 
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -32,8 +32,9 @@
               {{ $test->description }}
           </div>
 
-          <a href="{{ route('test_crud.index')}}" class="btn btn-primary">목록</a>
+          <a href="{{ route('test_crud.index')}}" class="btn btn-dark">LIST</a>
 
 
   </div>
-</div>
+</div> 
+@endsection

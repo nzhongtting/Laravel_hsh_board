@@ -30,7 +30,9 @@
               <label for="description">Description :</label>
               <textarea class="form-control" aria-label="With textarea" name="description"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">INSERT</button>
+          <a href="{{ route('test_crud.index')}}" class="btn btn-warning">LIST</a>111111
+          <button type="submit" class="btn btn-primary">INSERT</button> 
+
       </form>
   </div>
 </div>
