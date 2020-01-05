@@ -14,9 +14,12 @@ class TestCRUDController extends Controller
      */
     public function index()
     {
-        $test = TestCRUD::all();
 
-        return view('test_view.index', compact('test'));
+        $test = TestCRUD::paginate(10);
+        return view('test_view.index',compact('test'));
+
+        //        $test = TestCRUD::all();
+        //        return view('test_view.index', compact('test'));
     }
 
     /**

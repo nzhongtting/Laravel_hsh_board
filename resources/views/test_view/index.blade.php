@@ -28,6 +28,8 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
+
+
   <table class="table table-striped">
     <thead>
         <tr>
@@ -38,6 +40,10 @@
         </tr>
     </thead>
     <tbody>
+
+	
+@if(!empty($test) && $test->count())
+
     @foreach($test as $column)
         <tr>
             <td>{{$column->id}}</td>
@@ -54,7 +60,20 @@
             </td>
         </tr>
         @endforeach
+@else
+	<tr>
+	<td colspan="6">No Data !</td>
+	</tr>
+@endif
     </tbody>
   </table>
+
+{!! $test->links() !!}
+
+
+
+
+
+
 <div>
 @endsection
