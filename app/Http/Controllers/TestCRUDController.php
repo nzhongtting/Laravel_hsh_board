@@ -14,12 +14,12 @@ class TestCRUDController extends Controller
      */
     public function index()
     {
-
-        $test = TestCRUD::paginate(10);
+        $test = TestCRUD::orderBy('created_at','desc')->paginate(5);
+        // $test = TestCRUD::paginate(10);                              // no order by on total
         return view('test_view.index',compact('test'));
 
-        //        $test = TestCRUD::all();
-        //        return view('test_view.index', compact('test'));
+        //        $test = TestCRUD::all();                              // just total
+        //        return view('test_view.index', compact('test'));      // total
     }
 
     /**
