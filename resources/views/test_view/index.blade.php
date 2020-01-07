@@ -23,13 +23,6 @@
      
   </div>
 
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
-
-
   <table class="table table-striped">
     <thead>
         <tr>
@@ -41,14 +34,15 @@
     </thead>
     <tbody>
 
+    
 	
 @if(!empty($test) && $test->count())
 
     @foreach($test as $column)
         <tr>
             <td>{{$column->id}}</td>
-            <td>{{$column->title}}</td>
-            <td>{{$column->description}}</td>
+            <td>{{\Illuminate\Support\Str::limit($column->title,16)}}</td>
+            <td>{{\Illuminate\Support\Str::limit($column->description,12)}}</td>
             <td><a href="{{ route('test_crud.show', $column->id)}}" class="btn btn-primary">VIEW</a></td>
             <td><a href="{{ route('test_crud.edit', $column->id)}}" class="btn btn-success">MODIFY</a></td>
             <td>
@@ -69,11 +63,6 @@
   </table>
 
 {!! $test->links() !!}
-
-
-
-
-
 
 <div>
 @endsection

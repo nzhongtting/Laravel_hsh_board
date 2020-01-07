@@ -106,4 +106,12 @@ class TestCRUDController extends Controller
 
         return redirect('/test_crud')->with('success', 'test is successfully deleted');
     }
+
+  
+    // public function result(Request  $request)
+    // {
+    //     $result=TestCRUD::where('title', 'LIKE', "%{$request->input('query')}%")->get();
+    //     return response()->json($result);
+    // }
+
 }
